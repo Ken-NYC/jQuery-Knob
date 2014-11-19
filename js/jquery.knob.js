@@ -117,6 +117,7 @@
                     inputColor: this.$.data('inputcolor'),
                     font: this.$.data('font') || 'Arial',
                     fontWeight: this.$.data('font-weight') || 'bold',
+                    fontSize: this.$.data('font-size') || undefined,
                     inline: false,
                     step: this.$.data('step') || 1,
                     rotation: this.$.data('rotation'),
@@ -704,17 +705,20 @@
                 2
             ) + 2;
 
+						var fontsize = (this.o.fontSize) ? this.o.fontSize : ((this.w / s) >> 0) + 'px';
             this.o.displayInput
                 && this.i.css({
-                        'width' : ((this.w / 2 + 4) >> 0) + 'px',
+                        'width' : ((this.w / 2 + 24) >> 0) + 'px',
                         'height' : ((this.w / 3) >> 0) + 'px',
                         'position' : 'absolute',
                         'vertical-align' : 'middle',
                         'margin-top' : ((this.w / 3) >> 0) + 'px',
-                        'margin-left' : '-' + ((this.w * 3 / 4 + 2) >> 0) + 'px',
+                        'margin-left' : '-' + ((this.w * 3 / 4 + 12) >> 0) + 'px',
                         'border' : 0,
                         'background' : 'none',
-                        'font' : this.o.fontWeight + ' ' + ((this.w / s) >> 0) + 'px ' + this.o.font,
+                        'font-weight' : this.o.fontWeight,
+                        'font-size' : fontsize,
+                        'font-family' : this.o.font,
                         'text-align' : 'center',
                         'color' : this.o.inputColor || this.o.fgColor,
                         'padding' : '0px',

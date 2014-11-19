@@ -60,6 +60,7 @@ UI :
 * font : font family.
 * fontWeight : font weight.
 * bgColor : background color.
+* fontSize: font size. (new added!)
 
 Hooks
 -------
