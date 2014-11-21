@@ -291,8 +291,8 @@
 
             // scaling
             if (this.scale !== 1) {
-                this.$c[0].width = this.$c[0].width * this.scale;
-                this.$c[0].height = this.$c[0].height * this.scale;
+                this.$c[0].width = (((this.$c[0].width * this.scale + 1)>>1)<<1);
+                this.$c[0].height = (((this.$c[0].height * this.scale + 1)>>1)<<1);
                 this.$c.width(this.w);
                 this.$c.height(this.h);
             }
